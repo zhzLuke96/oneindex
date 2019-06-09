@@ -1,5 +1,8 @@
 FROM php:fpm-alpine
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
+    apk update
+
 COPY docker-entrypoint.sh php.ini default.conf /
 RUN apk add --no-cache \
         git \
