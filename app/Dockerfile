@@ -14,7 +14,7 @@ RUN apk add --no-cache \
     mv /default.conf /etc/nginx/conf.d && \
     mv /php.ini /usr/local/etc/php && \
     chmod +x /docker-entrypoint.sh && \
-    git clone https://github.com/david7207/oneindexMod.git --depth=1 /var/www/html && \
+    git clone https://github.com/donwa/oneindex.git --depth=1 /var/www/html && \
     ssh-keygen -A
 
 COPY ImagesController.php /var/www/html/controller/
