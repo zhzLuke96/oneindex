@@ -1,48 +1,12 @@
 # Docker-oneindex
 
-[![CircleCI](https://circleci.com/gh/TimeBye/oneindex.svg?style=svg)](https://circleci.com/gh/TimeBye/oneindex)
-[![Docker Pulls](https://img.shields.io/docker/pulls/setzero/oneindex.svg)](https://hub.docker.com/r/setzero/oneindex)
-[![](https://images.microbadger.com/badges/image/setzero/oneindex.svg)](https://microbadger.com/images/setzero/oneindex "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/setzero/oneindex.svg)](https://microbadger.com/images/setzero/oneindex "Get your own version badge on microbadger.com")
-
-> 👋 本项目为 [donwa/oneindex](https://github.com/donwa/oneindex/commits/master) docker 镜像。
-
-## 版本：
-
-- `latest`：以alpine为基础系统，跟踪 [donwa/oneindex](https://github.com/donwa/oneindex/commits/master) 的最新提交。
-- `alpine-commit_sha`：以alpine为基础系统，[donwa/oneindex](https://github.com/donwa/oneindex/commits/master) Commit sha对应的提交。
-
 ## 运行：
+```
+git clone https://github.com/zhzLuke96/oneindex.git; \
+cd oneindex; \
+docker-compose up -d
 
-- 使用`docker run`命令运行：
-
-    ```
-    docker run -d --name oneindex \
-        -p 80:80 --restart=always \
-        -v ~/oneindex/config:/var/www/html/config \
-        -v ~/oneindex/cache:/var/www/html/cache \
-        -e REFRESH_TOKEN='0 * * * *' \
-        -e REFRESH_CACHE='*/10 * * * *' \
-        setzero/oneindex
-    ```
-
-    - 停止删除容器：
-        ```
-        docker stop oneindex
-        docker rm -v oneindex
-        ```
-
-- 使用`docker-compose`运行：
-
-    ```
-    docker-compose up -d
-    ```
-
-    - 停止删除容器：
-        ```
-        docker-compose down
-        ```
-
+```
 ## 变量：
 
 - `TZ`：时区，默认`Asia/Shanghai`

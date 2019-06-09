@@ -3,6 +3,10 @@ version: "3"
 services:
   oneindex:
     image: setzero/oneindex
+    expose:
+    - "80"
+    ports:
+    - 8080:80
     environment:
     - REFRESH_TOKEN=0 * * * *
     - REFRESH_CACHE=*/10 * * * *
