@@ -2,7 +2,8 @@
 version: "3"
 services:
   oneindex:
-    image: setzero/oneindex
+    container_name: oneindex
+    build: ./app
     expose:
     - "80"
     ports:

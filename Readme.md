@@ -2,7 +2,7 @@
 
 ## 运行：
 ```
-git clone https://github.com/zhzLuke96/oneindex.git; \
+git clone https://github.com/zhzLuke96/oneindex.git --depth=1; \
 cd oneindex; \
 docker-compose up -d
 

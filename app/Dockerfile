@@ -11,8 +11,10 @@ RUN apk add --no-cache \
     mv /default.conf /etc/nginx/conf.d && \
     mv /php.ini /usr/local/etc/php && \
     chmod +x /docker-entrypoint.sh && \
-    git clone https://github.com/donwa/oneindex.git /var/www/html && \
+    git clone https://github.com/david7207/oneindexMod.git --depth=1 /var/www/html && \
     ssh-keygen -A
+
+COPY ImagesController.php /var/www/html/controller/
 
 # Persistent config file and cache
 VOLUME [ "/var/www/html/config", "/var/www/html/cache" ]
